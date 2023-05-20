@@ -18,4 +18,51 @@ body {
   border: solid 0.5px rgba(225, 60, 60, 0.684);
   background-color: rgba(232, 181, 181, 0.85);
   border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.box.x::before,
+.box.x::after {
+  content: "";
+  width: 8px;
+  height: 70px;
+  background-color: rgba(225, 60, 60);
+  transform: rotate(45deg);
+  position: absolute;
+  border-radius: 5px;
+}
+
+.box.x::after {
+  transform: rotate(45deg);
+}
+
+.box.x::after {
+  transform: rotate(-45deg);
+}
+
+.box.o::before,
+.box.o::after {
+  content: "";
+  width: 70px;
+  height: 70px;
+  background-color: rgba(225, 60, 60);
+  transform: rotate(45deg);
+  position: absolute;
+  border-radius: 50%;
+}
+
+.box.o::before {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(225, 60, 60);
+}
+
+.box.o::after {
+  width: 55px;
+  height: 55px;
+  background-color: rgba(232, 181, 181);
 }
