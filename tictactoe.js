@@ -8,7 +8,12 @@ const WIN_COMBINATIONS = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+
+//Variables for the O and X pseudo elements
+const THE_CIRCLE = "o";
+const THE_X = "x";
 const allBoxes = document.querySelectorAll("[data-box]");
+let circleTurn;
 
 allBoxes.forEach((box) => {
   box.addEventListener("click", clicked, { once: true });
@@ -17,9 +22,19 @@ allBoxes.forEach((box) => {
 function switchPlayer() {}
 
 function clicked(event) {
-  console.log(event);
-  //mark
+  let currentBox = event.target;
+  const currentType = circleTurn ? THE_CIRCLE : THE_X;
+  placeMark(currentBox, currentType);
+  switchPlayer();
   //check win
   //check draw
-  //switch
+
+  //Places the mark in the box based on the current type
+  function placeMark() {
+    currentBox.classList.add(currentType);
+  }
+  //This function switches a player
+  function switchPlayer() {
+    circleTurn = !circleTurn;
+  }
 }
