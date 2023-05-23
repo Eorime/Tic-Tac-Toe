@@ -34,7 +34,7 @@ function clicked(event) {
   placeMark(currentBox, currentType);
   switchPlayer();
   let currentBoxIndex = Number(currentBox.classList[1]) - 1;
-  console.log(currentBoxIndex);
+
   //   checkWin();
   //   checkDraw(); toca yvela sheivseba
 
