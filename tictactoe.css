@@ -64,7 +64,7 @@ body {
 .box.o::after {
   width: 55px;
   height: 55px;
-  background-color: rgba(232, 181, 181);
+  background-color: rgba(232, 181, 181, 0.9);
 }
 
 #win-screen {
