@@ -9,17 +9,15 @@ const WIN_COMBINATIONS = [
   [2, 4, 6],
 ];
 
+//State of the board
 let boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-// roca daechireba, shesabamis wevrs 1,2 dasvam
 let currentPlayer = 1;
-
-// get every element and compare the choices of the player
-// store the x choices
 
 //Variables for the O and X pseudo elements
 const THE_CIRCLE = "o";
 const THE_X = "x";
+
 const allBoxes = document.querySelectorAll("[data-box]");
 let circleTurn;
 
@@ -37,7 +35,7 @@ function clicked(event) {
   console.log(boarded);
   switchPlayer();
   checkWin();
-  //   checkDraw(); toca yvela sheivseba
+  checkDraw();
 
   //Places the mark in the box based on the current type
   function placeMark() {
@@ -55,7 +53,8 @@ function clicked(event) {
   }
 }
 
-const screen = document.getElementById("win-screen");
+const winscreen = document.getElementById("win-screen");
+const drawscreen = document.getElementById("draw-screen");
 
 //Checks for the win, looping the win combination array and checking
 // if the current state of the board matches any of the index
@@ -67,7 +66,7 @@ function checkWin() {
       boarded[currentCondition[0]] == boarded[currentCondition[1]] &&
       boarded[currentCondition[1]] == boarded[currentCondition[2]]
     ) {
-      screen.style.display = "flex";
+      winscreen.style.display = "flex";
     }
   }
 }
@@ -79,3 +78,5 @@ restartButton.addEventListener("click", function () {
   boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   currentPlayer = 1;
 });
+
+function checkDraw() {}
