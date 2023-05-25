@@ -2,13 +2,23 @@ body {
   background-color: rgba(225, 60, 60, 0.684);
 }
 
+h1 {
+  color: rgb(235, 203, 203);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  margin-left: 10px;
+  position: relative;
+  border-radius: 20px;
+}
 #gameboard {
   height: 300px;
   width: 300px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   margin: auto;
-  margin-top: 150px;
+  margin-top: 100px;
   border-radius: 15px;
 }
 
