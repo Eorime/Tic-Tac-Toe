@@ -91,7 +91,7 @@ h1 {
   display: none;
 }
 
-#restart {
+.restrt {
   background-color: rgb(235, 203, 203);
   color: rgba(225, 60, 60);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -109,7 +109,7 @@ h1 {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 50px;
   font-weight: bolder;
-  color: rgba(225, 60, 60);
+  color: rgba(235, 203, 203);
   margin-top: -400px;
 }
 
@@ -131,16 +131,16 @@ h1 {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 50px;
   font-weight: bolder;
-  color: rgba(225, 60, 60);
+  color: rgba(235, 203, 203);
   margin-top: -400px;
 }
 
-#restart:hover {
+.restrt:hover {
   cursor: pointer;
   background-color: rgba(225, 60, 60, 0.684);
   color: rgb(235, 203, 203);
 }
 
-#restart:active {
+.restrt:active {
   background-color: rgba(225, 60, 60);
 }

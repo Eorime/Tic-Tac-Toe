@@ -75,15 +75,6 @@ function checkWin() {
   return false;
 }
 
-const restartButton = document.getElementById("restart");
-
-restartButton.addEventListener("click", function () {
-  winscreen.style.display = "none";
-  drawscreen.style.display = "none";
-  boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-  currentPlayer = 1;
-});
-
 function checkDraw() {
   for (let i = 0; i < boarded.length; i++) {
     if (boarded[i] == 0) {
@@ -92,5 +83,20 @@ function checkDraw() {
   }
   return true;
 }
+
+const restartButton = document.getElementById("restart");
+const restartButton2 = document.getElementById("restart2");
+
+restartButton.addEventListener("click", function () {
+  winscreen.style.display = "none";
+  boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  currentPlayer = 1;
+});
+
+restartButton2.addEventListener("click", function () {
+  drawscreen.style.display = "none";
+  boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  currentPlayer = 1;
+});
 
 //for loop
