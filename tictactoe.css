@@ -12,6 +12,7 @@ h1 {
   position: relative;
   border-radius: 20px;
 }
+
 #gameboard {
   height: 300px;
   width: 300px;
@@ -125,7 +126,7 @@ h1 {
   display: none;
 }
 
-#draw {
+#drawtext {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 50px;

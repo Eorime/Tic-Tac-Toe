@@ -34,8 +34,12 @@ function clicked(event) {
   boarded[currentBoxIndex] = currentPlayer;
   console.log(boarded);
   switchPlayer();
-  checkWin();
-  checkDraw();
+
+  if (checkWin()) {
+    winscreen.style.display = "flex";
+  } else if (checkDraw()) {
+    drawscreen.style.display = "flex";
+  }
 
   //Places the mark in the box based on the current type
   function placeMark() {
@@ -65,18 +69,28 @@ function checkWin() {
       boarded[currentCondition[0]] != 0 &&
       boarded[currentCondition[0]] == boarded[currentCondition[1]] &&
       boarded[currentCondition[1]] == boarded[currentCondition[2]]
-    ) {
-      winscreen.style.display = "flex";
-    }
+    )
+      return true;
   }
+  return false;
 }
 
 const restartButton = document.getElementById("restart");
 
 restartButton.addEventListener("click", function () {
-  screen.style.display = "none";
+  winscreen.style.display = "none";
+  drawscreen.style.display = "none";
   boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   currentPlayer = 1;
 });
 
-function checkDraw() {}
+function checkDraw() {
+  for (let i = 0; i < boarded.length; i++) {
+    if (boarded[i] == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+//for loop
