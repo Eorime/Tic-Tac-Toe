@@ -9,15 +9,12 @@ const WIN_COMBINATIONS = [
   [2, 4, 6],
 ];
 
-//State of the board
 let boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-
 let currentPlayer = 1;
-
-//Variables for the O and X pseudo elements
 const THE_CIRCLE = "o";
 const THE_X = "x";
-
+const restartButton = document.getElementById("restart");
+const restartButton2 = document.getElementById("restart2");
 const allBoxes = document.querySelectorAll("[data-box]");
 let circleTurn;
 
@@ -32,7 +29,6 @@ function clicked(event) {
   placeMark(currentBox, currentType);
   let currentBoxIndex = Number(currentBox.classList[1]) - 1;
   boarded[currentBoxIndex] = currentPlayer;
-  console.log(boarded);
   switchPlayer();
 
   if (checkWin()) {
@@ -41,12 +37,10 @@ function clicked(event) {
     drawscreen.style.display = "flex";
   }
 
-  //Places the mark in the box based on the current type
   function placeMark() {
     currentBox.classList.add(currentType);
   }
 
-  //This function switches the player
   function switchPlayer() {
     circleTurn = !circleTurn;
     if (currentPlayer == 1) {
@@ -84,19 +78,28 @@ function checkDraw() {
   return true;
 }
 
-const restartButton = document.getElementById("restart");
-const restartButton2 = document.getElementById("restart2");
-
 restartButton.addEventListener("click", function () {
   winscreen.style.display = "none";
   boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   currentPlayer = 1;
+  allBoxes.forEach((box) => {
+    box.classList.remove(THE_CIRCLE);
+    box.classList.remove(THE_X);
+  });
+  allBoxes.forEach((box) => {
+    box.addEventListener("click", clicked, { once: true });
+  });
 });
 
 restartButton2.addEventListener("click", function () {
   drawscreen.style.display = "none";
   boarded = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   currentPlayer = 1;
+  allBoxes.forEach((box) => {
+    box.classList.remove(THE_CIRCLE);
+    box.classList.remove(THE_X);
+  });
+  allBoxes.forEach((box) => {
+    box.addEventListener("click", clicked, { once: true });
+  });
 });
-
-//for loop
